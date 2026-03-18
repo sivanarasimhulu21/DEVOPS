@@ -29,15 +29,15 @@ aws configure
 
 Provide the following values:
 
-AWS Access Key ID
-AWS Secret Access Key
-Default region name
-Default output format
+*AWS Access Key ID
+*AWS Secret Access Key
+*Default region name
+*Default output format
 
 Terraform will use these credentials to access AWS services.
 
 
----
+'''
 ## Project Structure
 terraform-ec2-project
 │
@@ -47,7 +47,8 @@ terraform-ec2-project
 ├── terraform.tfvars
 ├── outputs.tf
 └── README.md
----
+
+'''
 
 ## Terraform Architecture
 
@@ -59,9 +60,11 @@ Write Configuration → Initialize → Plan → Apply → Manage → Destroy
 
 Provider Configuration
 ---
+
 provider "aws" {
   region = "ap-south-1"
 }
+
 ---
 This tells Terraform to interact with AWS services in the Mumbai region.
 
@@ -81,6 +84,7 @@ resource "aws_instance" "my_ec2" {
 
 ##  Terraform Workflow
 ---
+'''
 Step 1 — Initialize Terraform
 terraform init
 
@@ -97,6 +101,7 @@ terraform plan
 Step 4 — Apply Infrastructure
 terraform apply
 
+'''
 ---
 Terraform will:
 
