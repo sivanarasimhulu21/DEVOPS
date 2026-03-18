@@ -5,9 +5,9 @@ https://developer.hashicorp.com/terraform
 
 Verify installation:
 
-
+'''
 terraform -version
-
+'''
 
 ---
 
@@ -17,15 +17,15 @@ Terraform requires AWS credentials configured in your system.
 
 Install AWS CLI:
 
-
+'''
 sudo apt install awscli
-
+'''
 
 Verify installation:
 
-
+'''
 aws --version
-
+'''
 
 ---
 
@@ -33,9 +33,9 @@ aws --version
 
 Configure AWS credentials using:
 
-
+'''
 aws configure
-
+'''
 
 Provide the following values:
 
@@ -50,7 +50,7 @@ Terraform will use these credentials to access AWS services.
 
 # Project Structure
 
-
+'''
 terraform-ec2-project
 │
 ├── main.tf
@@ -59,7 +59,7 @@ terraform-ec2-project
 ├── terraform.tfvars
 ├── outputs.tf
 └── README.md
-
+'''
 
 ---
 
@@ -71,25 +71,25 @@ Terraform works using the following workflow:
 Write Configuration → Initialize → Plan → Apply → Manage → Destroy
 
 
----
 
 # Terraform Configuration Example
 
 ## Provider Configuration
 
-
+'''
 provider "aws" {
 region = "ap-south-1"
 }
+'''
 
 
 This tells Terraform to interact with AWS services in the Mumbai region.
 
----
+
 
 ## EC2 Instance Resource
 
-
+'''
 resource "aws_instance" "my_ec2" {
 
 ami = "ami-0f5ee92e2d63afc18"
@@ -100,37 +100,36 @@ Name = "Terraform-EC2"
 }
 
 }
+'''
 
-
----
 
 # Terraform Workflow
 
-## Step 1 — Initialize Terraform
+#### Step 1 — Initialize Terraform
 
-
+'''
 terraform init
+'''
 
+#### Step 2 — Validate Configuration
 
-## Step 2 — Validate Configuration
-
-
+'''
 terraform validate
-
+'''
 
 Checks syntax errors in Terraform files.
 
-## Step 3 — Terraform Plan
+#### Step 3 — Terraform Plan
 
-
+'''
 terraform plan
+'''
 
+#### Step 4 — Apply Infrastructure
 
-## Step 4 — Apply Infrastructure
-
-
+'''
 terraform apply
-
+'''
 
 Terraform will:
 
@@ -152,5 +151,6 @@ After execution, the EC2 instance will be visible in the Amazon EC2 console.
 
 To remove the created infrastructure:
 
-
+'''
 terraform destroy
+'''
